@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -28,7 +27,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </HBox>
-                  <TextArea editable="false" />
+                  <TextArea fx:id="txtInput" />
                   <HBox alignment="CENTER_RIGHT">
                      <children>
                         <Button fx:id="btnSpell" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check" />
@@ -39,14 +38,14 @@
             <VBox spacing="10.0">
                <children>
                   <Label text="Wrong words:" />
-                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" />
+                  <TextArea fx:id="txtOutput" editable="false" prefHeight="200.0" prefWidth="200.0" />
                   <HBox alignment="CENTER_RIGHT" spacing="10.0">
                      <children>
-                        <TextField fx:id="txtError" editable="false" style="-fx-background-color: 0;" />
+                        <Label fx:id="txtError" text="Numero errori" textFill="#ff2b00" />
                         <Button fx:id="btnClearText" mnemonicParsing="false" onAction="#doClearText" text="Cleat Text" />
                      </children>
                   </HBox>
-                  <TextField fx:id="txtTime" editable="false" style="-fx-background-color: 0;" />
+                  <Label fx:id="txtTime" text="Tempo impiegato" />
                </children>
             </VBox>
          </children>
