@@ -58,9 +58,4 @@ public class RichWord {
 			this.corretta=true;
 		}
 	}
-	
-	
-	
-	
-	
 }

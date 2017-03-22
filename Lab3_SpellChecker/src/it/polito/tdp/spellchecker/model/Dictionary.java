@@ -23,6 +23,8 @@ public class Dictionary {
 			} catch (IOException e){
 			System.out.println("Errore nella lettura del file");
 			}
+		
+		Collections.sort(dizionario);
 	}
 	
 	public List<RichWord> spellCheckText(List<String> inputTextList){
@@ -30,13 +32,25 @@ public class Dictionary {
 		
 		for(String s: inputTextList){
 			RichWord r=new RichWord(s);
-			if(dizionario.contains(s)){
-				r.isCorrect();
+			int start=0;
+			int end=dizionario.size();
+			int centro=start+end/2;
+			while(start+1<end){
+				if(r.getParola().compareTo(dizionario.get(centro))>0){
+					start=centro;
+					centro=(centro+end)/2;
+				}
+				else if(r.getParola().compareTo(dizionario.get(centro))<0){
+					end=centro;
+					centro=(centro+start)/2;
+				}
+				else{
+					r.isCorrect();
+					break;
+				}
 			}
 			listaParole.add(r);
 		}
-
 		return listaParole;
 	}
-	
 }

@@ -84,7 +84,7 @@ public class SpellCheckerController {
     	long t1=System.nanoTime();
     	
     	txtError.setText("Il testo contiene "+ numErrate+" errore/i.");
-    	txtTime.setText("Tempo necessario per la traduzione "+(t1-t)+ " nanosecondi.");
+    	txtTime.setText("Tempo necessario per la traduzione "+(t1-t)/1e9+ " secondi.");
     	txtError.setVisible(true);
     	txtTime.setVisible(true);
     }
